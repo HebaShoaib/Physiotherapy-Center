@@ -11,6 +11,7 @@ Patient::Patient(int id, int pt, int vt, string t)
     }
 }
 
+// Getter methods
 int Patient::getPT() const
 {
     return PT;
@@ -55,8 +56,8 @@ void Patient::addTreatment(char type, int duration)
             return;
         }
     }
-        treatmentTypes[treatmentCount] = type;
-        treatmentDurations[treatmentCount] = duration;
+        this->treatmentTypes[treatmentCount] = type;
+        this->treatmentDurations[treatmentCount] = duration;
         ++treatmentCount;    
 }
 
