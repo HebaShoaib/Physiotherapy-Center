@@ -7,8 +7,8 @@ class Patient
     int PID;   
     int PT;
     int VT;
-    string type;   
-    string status;
+    string type;   // TODO: change into enum
+    string status; // TODO: change into enum
     char treatmentTypes[3]; 
     int treatmentDurations[3];
     int treatmentCount;
