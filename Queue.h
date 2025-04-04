@@ -58,6 +58,7 @@ class Queue
         
     }
     
+    
     bool Dequeue(){
         if (isEmpty()){
             return false;
@@ -71,8 +72,9 @@ class Queue
         delete temp;
         rear->next = NULL;
         return true;
-            
-};
+    }
+
+
     int PeekFront(){
         if (isEmpty()) {
             return -1;
@@ -80,4 +82,6 @@ class Queue
         return front->data;
         
     }
+};
+   
 
