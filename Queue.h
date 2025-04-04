@@ -58,36 +58,19 @@ class Queue
         
     }
     
-    bool Dequeue(int data){
+    bool Dequeue(){
         if (isEmpty()){
             return false;
         }
-        if (front->data == data) {
-            Node* temp = front;
-            front = front->next;
-            delete temp;
-            return true;
-        }
-        if (rear->data == data) {
-            Node* temp = front;
-            while (temp->next != rear) {
-                temp = temp->next;
-            }
-            delete rear;
-            rear = temp;
-            rear->next = NULL;
-            return true;
-        }
-        
-        
         Node* temp = front;
-        while (temp->next != NULL) {
-            if (temp->data == data) {
-                temp->next = temp->next->next;
-                return true;
-            }
+        while (temp->next != rear) {
+            temp = temp->next;
         }
-        return false;
-    }
+        rear = temp;
+        temp = temp->next;
+        delete temp;
+        rear->next = NULL;
+        return true;
+            
 };
 
