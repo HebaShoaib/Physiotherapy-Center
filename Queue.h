@@ -7,13 +7,13 @@ class Queue
     public:
     Node *front;
     Node *rear;
-    int c;
+    //int c;
     
-    Queue(int capacity){
-        front = NULL;
-        rear = NULL;
-        c = capacity;
-    }
+//    Queue(int capacity){
+//        front = NULL;
+//        rear = NULL;
+//        c = capacity;
+//    }
     
     bool isEmpty(){
     if (front == NULL)
@@ -23,27 +23,27 @@ class Queue
     }
     
     
-    bool isFull(){
-        if (!front)
-            return false;
-        else {
-            Node* temp = front;
-            int count = 0;
-            while (temp != NULL) {
-                count++;
-                temp = temp->next;
-            }
-            if (count == c)
-                return true;
-        }
-        return false;
-    }
+//    bool isFull(){
+//        if (!front)
+//            return false;
+//        else {
+//            Node* temp = front;
+//            int count = 0;
+//            while (temp != NULL) {
+//                count++;
+//                temp = temp->next;
+//            }
+//            if (count == c)
+//                return true;
+//        }
+//        return false;
+//    }
         
     
     bool Enqueue(int data){
-        if (isFull()) {
-            return false;
-        }
+//        if (isFull()) {
+//            return false;
+//        }
         Node* newNode = new Node;
         newNode->data = data;
         newNode->next = NULL;
@@ -73,4 +73,11 @@ class Queue
         return true;
             
 };
+    int PeekFront(){
+        if (isEmpty()) {
+            return -1;
+        }
+        return front->data;
+        
+    }
 
